@@ -12,7 +12,8 @@ module Poboco
     include Singleton
 
     def initialize
-      @sounds = {}
+      @fonts    = {}
+      @sounds   = {}
       @graphics = {}
     end
 
@@ -24,6 +25,15 @@ module Poboco
     def graphics(key)
       return @graphics[key] unless @graphics[key].nil?
       ResourceLoader.new(lambda { |path, *args| @graphics[key] = Image.load(path, *args) })
+    end
+
+    def fonts(key)
+      return @fonts[key] unless @fonts[key].nil?
+      ResourceLoader.new(lambda { |size, *args| @fonts[key] = Font.new(size, *args) })
+    end
+
+    def install_font(path)
+      Font.install(path)
     end
 
     class << self
