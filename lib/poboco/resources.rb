@@ -21,7 +21,7 @@ module Poboco
       ResourceLoader.new(lambda { |path, *args| @sounds[key] = Sound.new(path) })
     end
 
-    def graphics(key, *args)
+    def graphics(key)
       return @graphics[key] unless @graphics[key].nil?
       ResourceLoader.new(lambda { |path, *args| @graphics[key] = Image.load(path, *args) })
     end
