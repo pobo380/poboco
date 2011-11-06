@@ -54,11 +54,11 @@ module Poboco
       end
 
       def update
-        p @black_sprite.image_alpha
         if @black_sprite.image_alpha == 255 and not self.turned?
           @black_sprite.start_command([[:add_alpha, -15], [:wait, 1]])
           turned
         elsif @black_sprite.image_alpha == 0 and self.turned?
+          @black_sprite.start_command([[:wait, 1]])
           finished
         end
         DXRubyFw::Sprite.update([@black_sprite])
