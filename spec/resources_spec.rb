@@ -17,11 +17,11 @@ module Poboco
       end
 
       it "should be able to install Font." do
-        Resources.install_font(File.expand_path('../resources/APJapanesefontT.ttf', __FILE__))
+        Resources.install_font(File.expand_path('../resources/ume-tmo3.ttf', __FILE__))
       end
 
       it "should be able to load Font." do
-        Resources.fonts(:mika).load(13, "あんずもじ等幅")
+        Resources.fonts(:mika).load(13, "梅明朝")
       end
 
       it "should be able to release Sound."
