@@ -27,4 +27,5 @@ require path + '/poboco/sprite'
 require path + '/poboco/scene'
 require path + '/poboco/controls'
 require path + '/poboco/transition'
+require path + '/poboco/resources'
 
